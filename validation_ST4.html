@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Validation page</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image:url(images/blue.jpeg);
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            background: #0044cc;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Main Wrapper (New Container) */
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        /* Main Content Container */
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            padding: 10px;
+            border-radius: 10px;
+            background: #ffffff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            max-height:1800px;
+            
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 10px;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        /* Links */
+        a {
+            color: #081327;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* List Styling */
+        ul {
+            padding-left: 20px;
+        }
+
+         /* Logo Styles */
+         .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 120px;
+            width: 120px;
+            z-index: 2;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .navbar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 580px;
+            width: 120%;
+            height: 120%;
+            background-color: rgba(10, 5, 99, 0.4); /* Semi-transparent blue */
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            z-index: -1;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            padding: 10px 30px;
+            margin: 0 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: rgb(54, 60, 62);
+            color: rgb(89, 237, 232);
+        }
+
+        .separator {
+            width: 3px;
+            background-color: rgb(255, 255, 255);
+            height: 30px;
+            margin: 0 10px;
+        }
+        /* Footer Styles */
+        footer {
+            background: url('images/footer.png') no-repeat center -600px;
+            background-size: cover; /* Ensures the image covers the footer */
+            padding: 20px 0;
+            color: black;
+            font-size: 16px;
+            width: 120%;
+            margin-left: -8%;
+            margin-right: -7%;
+
+        }
+
+        /* Flexbox for Footer Layout */
+        .footer-container {
+            display: flex;
+            justify-content: space-between; /* Space out sections evenly */
+            align-items: flex-start;
+            max-width: 2000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Footer Logo & Text */
+        .footer-left {
+            max-width: 300px;
+            text-align: left;
+            margin-top: 50px;
+        }
+
+        .footer-logo {
+            height: 100px;
+            width: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Footer Links */
+        .footer-center {
+            margin-right: 70px; /* Add spacing between sections */
+            margin-top: 40px;
+        }
+
+        /* Footer Editors */
+        .footer-right {
+            margin-top: 90px; /* Adjust as needed */
+        }
+
+        .footer-center h3, .footer-right h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-center ul, .footer-right ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-center ul li, .footer-right ul li {
+            margin: 5px 0;
+        }
+
+        .footer-center ul li a {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .footer-center ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Bottom Section */
+        .footer-bottom {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .footer-bottom hr {
+            width: 80%;
+            border: 0.5px solid black;
+            margin: 10px auto;
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo -->
+    <img src="images/logo2.png" alt="Logo" class="logo">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+          <a href="home.html">Home</a>
+          <div class="separator"></div>
+          <a href="#volunteer">Volunteer</a>
+          <div class="separator"></div>
+          <a href="#team">Team</a>
+          <div class="separator"></div>
+          <a href="#table">Table</a>
+          <div class="separator"></div>
+          <a href="user profile.html">User Profile</a>
+    </nav>
+
+    
+
+    <!-- New Wrapper Container for better structure -->
+    <div class="wrapper">
+      
+        <div class="container">
+            <header>
+          <h1>validation report</h1>
+            </header>
+              <section>
+                  <p><strong>Name:</strong> Tharusha Damsara Hewapathirana</p>
+                  <p><strong>Role:</strong> Student 4</p>
+                  <p><strong>Tasks:</strong> User profile, Site map, and Content Page</p>
+              </section>
+        
+              <section>
+                  <h2>User profile validation </h2>
+                  <img src="images/profile.png" alt="Home Page Validation Screenshot"class="centered-image" style="width: 1000px">
+                
+                  <p><a href="profile.html" target="_blank">User Profile Page</a></p>
+              </section>
+        
+              <section>
+                  <h2>Sitemap validation</h2>
+                  <img src="images/site map.png" alt="Home Page Validation Screenshot"class="centered-image" style="width: 1000px">
+                  <p><a href="sitemap.html" target="_blank">Sitemap Page</a></p>
+              </section>
+        
+              <section>
+                  <h2>Content Page validation</h2>
+                  <img src="images/content.png" alt="Home Page Validation Screenshot "class="centered-image" style="width: 1000px" >
+                  <p><a href="content_ST4.html" target="_blank">Content Page</a></p>
+              </section>
+        
+
+    <footer>
+        <div class="footer-container">
+            <!-- Left Section: Icon & Flavor Text -->
+            <div class="footer-left">
+                <img src="images/logo2.png" alt="Logo" class="footer-logo">
+                <p>Blue Horizon promotes ocean conservation and sustainability through education, advocacy, and community engagement.</p>
+            </div>
+
+            <!-- Center Section: Links -->
+            <div class="footer-center">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="table.html">Table</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">User Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="cw.html">Feedback</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Section: Editors -->
+            <div class="footer-right">
+                <h3>Editors</h3>
+                <ul>
+                    <li>Student 1</li>
+                    <li>Student 2</li>
+                    <li>Student 3</li>
+                    <li><a href="pageEditor _ST4.html">Student 4</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Notice -->
+        <div class="footer-bottom">
+            <hr>
+            <p>&copy; 2025 Blue Horizon. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

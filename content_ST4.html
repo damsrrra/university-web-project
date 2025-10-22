@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Page - Student 4</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(images/blue.jpeg);
+            background-size: cover;
+        }
+        .sidebar-menu {
+            position: fixed;
+            top: 50px;
+            right: 0;
+            background: #222;
+            width: 200px;
+            height: 100vh;
+            padding-top: 20px;
+            text-align: center;
+        }
+        .sidebar-menu a {
+            display: block;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .sidebar-menu a:hover {
+            background: #444;
+        }
+        .container {
+            margin-left: 175px;
+            margin-top: 100px;
+            width: 60%;
+            padding: 20px; 
+            background: rgb(255, 255, 255);
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        section {
+            padding: 20px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        .centered-image {
+            display: block;
+            margin: 10px auto;
+            max-width: 100%;
+            height: auto;
+        }
+        .top-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #0044cc;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        h2 {
+            color: #0077b6;
+        }
+        ul {
+            line-height: 1.6;
+        }
+         /* Logo Styles */
+         .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 120px;
+            width: 120px;
+            z-index: 2;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .navbar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 580px;
+            width: 120%;
+            height: 120%;
+            background-color: rgba(10, 5, 99, 0.4); /* Semi-transparent blue */
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            z-index: -1;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            padding: 10px 30px;
+            margin: 0 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: rgb(54, 60, 62);
+            color: rgb(79, 129, 217);
+        }
+
+        .separator {
+            width: 3px;
+            background-color: rgb(255, 255, 255);
+            height: 30px;
+            margin: 0 10px;
+        }
+        /* Footer Styles */
+        footer {
+            background: url('images/footer.png') no-repeat center -600px;
+            background-size: cover; /* Ensures the image covers the footer */
+            padding: 20px 0;
+            color: black;
+            font-size: 16px;
+            width: 120%;
+            margin-left: -8%;
+            margin-right: -7%;
+
+        }
+
+        /* Flexbox for Footer Layout */
+        .footer-container {
+            display: flex;
+            justify-content: space-between; /* Space out sections evenly */
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Footer Logo & Text */
+        .footer-left {
+            max-width: 300px;
+            text-align: left;
+            margin-top: 50px;
+        }
+
+        .footer-logo {
+            height: 100px;
+            width: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Footer Links */
+        .footer-center {
+            margin-right: 70px; /* Add spacing between sections */
+            margin-top: 40px;
+        }
+
+        /* Footer Editors */
+        .footer-right {
+            margin-top: 90px; /* Adjust as needed */
+        }
+
+        .footer-center h3, .footer-right h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-center ul, .footer-right ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-center ul li, .footer-right ul li {
+            margin: 5px 0;
+        }
+
+        .footer-center ul li a {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .footer-center ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Bottom Section */
+        .footer-bottom {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .footer-bottom hr {
+            width: 80%;
+            border: 0.5px solid black;
+            margin: 10px auto;
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo -->
+    <img src="images/logo2.png" alt="Logo" class="logo">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+          <a href="home.html">Home</a>
+          <div class="separator"></div>
+          <a href="#volunteer">Volunteer</a>
+          <div class="separator"></div>
+          <a href="#team">Team</a>
+          <div class="separator"></div>
+          <a href="#table">Table</a>
+          <div class="separator"></div>
+          <a href="user profile.html">User Profile</a>
+    </nav>
+
+    
+    <div class="sidebar-menu">
+        <a href="#section1">Introduction</a>
+        <a href="#section2">The targets</a>
+        <a href="#section3">Why marine protection is Important</a>
+        <a href="#section4">Take Actions</a>
+    </div>
+    
+    <div class="container">
+        <h1 style="color: #3048d1;font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"><U>Marine Protection</U></h1>
+        <section id="section1">
+            <h2>Introduction</h2>
+            <p>Marine protection, also known as ocean conservation, is the protection and preservation of ecosystems in oceans and seas through planned management in order to prevent the over-exploitation of these marine resources.</p>
+            <img src="images/introduction.webp" alt="Relevant Image 1" class="centered-image" style="width: 1000px;">
+        </section>
+        
+        <section id="section2">
+            <h2>The targets affects to Marine protection</h2>
+            <p>Everyone can help to make sure that we meet the Global Goals. Use these ten targets to create action to conserve and sustainably use the oceans.</p>
+            
+            <p><b>Target 14.1 - REDUCE MARINE POLLUTION</b><br>
+                By 2025, prevent and significantly reduce marine pollution of all kinds, particularly from land-based activities, including marine debris and nutrient pollution.</p>
+
+            <p><b>Target 14.2 - PROTECT AND RESTORE ECOSYSTEMS</b><br>
+                By 2020, sustainably manage and protect marine and coastal ecosystems to avoid significant adverse impacts, including by strengthening their resilience and taking action for their restoration.</p>
+
+            <p><b>Target 14.3 - REDUCE OCEAN ACIDIFICATION</b><br>
+                Minimize and address the impacts of ocean acidification, including through enhanced scientific cooperation at all levels.</p>
+
+            <p><b>Target 14.4 - SUSTAINABLE FISHING</b><br>
+                By 2020, effectively regulate harvesting and end overfishing, illegal, unreported, and unregulated fishing to restore fish stocks.</p>
+
+            <p><b>Target 14.5 - CONSERVE COASTAL AND MARINE AREAS</b><br>
+                By 2020, conserve at least 10% of coastal and marine areas, consistent with national and international law.</p>
+
+            <p><b>Target 14.6 - END SUBSIDIES CONTRIBUTING TO OVERFISHING</b><br>
+                By 2020, prohibit subsidies contributing to overfishing and ensure fair treatment for developing countries.</p>
+
+            <img src="images/goals.png" alt="Relevant Image 2" class="centered-image" style="width: 500px;">
+        </section>
+        
+        <section id="section3">
+            <h2>Why marine protection is Important</h2>
+            
+            <h3>Significant Portion of the World's Oxygen</h3>
+            <p>Oceans and seas produce about 50% of the world’s oxygen through phytoplankton. Protecting marine life ensures a stable oxygen supply.</p>
+            
+            <h3>Regulating the Climate</h3>
+            <p>Oceans absorb and store heat, regulating global temperatures and weather patterns. Their circulation systems prevent extreme climate shifts.</p>
+            
+            <h3>Supporting Diverse Marine Ecosystems</h3>
+            <p>Marine ecosystems support biodiversity, offering habitats to countless species. Conservation helps maintain ecological balance.</p>
+
+            <img src="images/quote.png" alt="Relevant Image 3" class="centered-image" style="width: 1000px;">
+        </section>
+
+        <section id="section4">
+            <h2>Actions to Protect Marine Life</h2>
+            <ul>
+                <li><strong>Reduce Marine Pollution:</strong> Avoid plastic waste, properly dispose of chemicals.</li>
+                <li><strong>Protect Marine Ecosystems:</strong> Preserve coral reefs, support conservation programs.</li>
+                <li><strong>Promote Sustainable Fishing:</strong> Avoid overfishing, follow responsible seafood practices.</li>
+                <li><strong>Combat Ocean Acidification:</strong> Reduce CO₂ emissions to protect marine biodiversity.</li>
+                <li><strong>Support Marine Conservation Policies:</strong> Advocate for stronger environmental regulations.</li>
+                <li><strong>Increase Awareness:</strong> Educate communities and participate in ocean clean-ups.</li>
+            </ul>
+
+            <img src="images/plastic.jpeg" alt="Relevant Image 4" class="centered-image" style="width: 1000px;">
+        </section>
+    </div>
+    
+    <a href="#top" class="top-button">Go to Top</a>
+  <footer>
+        <div class="footer-container">
+            <!-- Left Section: Icon & Flavor Text -->
+            <div class="footer-left">
+                <img src="images/logo2.png" alt="Logo" class="footer-logo">
+                <p>Blue Horizon promotes ocean conservation and sustainability through education, advocacy, and community engagement.</p>
+            </div>
+
+            <!-- Center Section: Links -->
+            <div class="footer-center">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="table.html">Table</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">User Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="cw.html">Feedback</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Section: Editors -->
+            <div class="footer-right">
+                <h3>Editors</h3>
+                <ul>
+                    <li>Student 1</li>
+                    <li>Student 2</li>
+                    <li>Student 3</li>
+                    <li><a href="pageEditor _ST4.html">Student 4</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Notice -->
+        <div class="footer-bottom">
+            <hr>
+            <p>&copy; 2025 Blue Horizon. All Rights Reserved.</p>
+        </div>
+ </footer>  
+</body>
+</html>

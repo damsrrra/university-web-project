@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>profile</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <style>
+       
+
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(images/sea.jpg);
+            margin-left: 100px;
+            margin-right: 100px;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+        }
+
+        /* Logo Styles */
+        .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 120px;
+            width: 120px;
+            z-index: 2;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .navbar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 580px;
+            width: 120%;
+            height: 120%;
+            background-color: rgba(10, 5, 99, 0.4); /* Semi-transparent blue */
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            z-index: -1;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            padding: 10px 30px;
+            margin: 0 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: rgb(54, 60, 62);
+            color: rgb(89, 237, 232);
+        }
+
+        .separator {
+            width: 3px;
+            background-color: rgb(255, 255, 255);
+            height: 30px;
+            margin: 0 10px;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+            padding: 20px;
+            width: 100%;
+            max-width: 1300px;
+            flex: 1; /* Allow the container to grow and push the footer to the bottom */
+        }
+
+        .left-column {
+            flex: 25%;
+            padding: 20px;
+            background: #e18b2e;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .skill-card {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .skill-card h3 i {
+            color: #e18b2e;
+            margin-right: 10px;
+        }
+
+        .right-column {
+            flex: 75%;
+            padding: 20px;
+            background: #5ab0ea;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .profile-img {
+            width: 200px;
+            border-radius: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .progress-bar {
+            width: 100%;
+            background: #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .progress {
+            height: 10px;
+            background: #4caf50;
+        }
+
+        .card {
+            margin-bottom: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: #f9f9f9;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .un-goals {
+            display: flex;
+            gap: 10px;
+        }
+
+        .form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        input, textarea, button {
+            width: 90%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background: #3b5998;
+            color: white;
+            cursor: pointer;
+        }
+
+        .card h3 i {
+            color: #e18b2e;
+            margin-right: 10px;
+        }
+
+        .card ul {
+            margin: 0;
+            padding-left: 20px;
+            list-style-type: disc;
+        }
+
+        .card ul li {
+            padding-left: 20px;
+            text-indent: -15px;
+            font-size: 1em;
+            color: #141414;
+        }
+
+        .available {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .highlight {
+            background-color: #6a1b9a;
+            color: white;
+            font-weight: bold;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .available:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        img {
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        img:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Footer Styles */
+        footer {
+            background: url('images/footer.png') no-repeat center -600px;
+            background-size: cover; /* Ensures the image covers the footer */
+            padding: 20px 0;
+            color: black;
+            font-size: 16px;
+            width: 120%;
+            margin-left: -8%;
+            margin-right: -7%;
+
+        }
+
+        /* Flexbox for Footer Layout */
+        .footer-container {
+            display: flex;
+            justify-content: space-between; /* Space out sections evenly */
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Footer Logo & Text */
+        .footer-left {
+            max-width: 300px;
+            text-align: left;
+            margin-top: 50px;
+        }
+
+        .footer-logo {
+            height: 100px;
+            width: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Footer Links */
+        .footer-center {
+            margin-right: 70px; /* Add spacing between sections */
+            margin-top: 40px;
+        }
+
+        /* Footer Editors */
+        .footer-right {
+            margin-top: 90px; /* Adjust as needed */
+        }
+
+        .footer-center h3, .footer-right h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-center ul, .footer-right ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-center ul li, .footer-right ul li {
+            margin: 5px 0;
+        }
+
+        .footer-center ul li a {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .footer-center ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Bottom Section */
+        .footer-bottom {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .footer-bottom hr {
+            width: 80%;
+            border: 0.5px solid black;
+            margin: 10px auto;
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+  </style>
+</head>
+<body>
+  <img src="images/logo2.png" alt="Logo" class="logo">
+  <nav class="navbar">
+    <a href="home.html">Home</a>
+    <div class="separator"></div><a href="#volunteer">Volunteer</a>
+    <div class="separator"></div><a href="#team">Team</a>
+    <div class="separator"></div><a href="#table">Table</a>
+    <div class="separator"></div><a href="user%20profile.html">User Profile</a>
+  </nav>
+  <div class="container">
+    <div class="left-column">
+      <div class="row">
+        <img src="images/profile.jpg" alt="Profile Picture" class="profile-img">
+        <h1 style="color:white;text-align: center;">Dexter Murphy</h1>
+        <h3 style="color:white;text-align: center;"><strong>Marine Engineer</strong></h3>
+        <p style="color:white;"><b>Age:</b> 21</p>
+        <p style="color:white;"><b>Family:</b> Single</p>
+        <p style="color:white;"><b>Location:</b>USA</p>
+        <section class="card">
+          <h3>About Me</h3>
+          <h5 style="font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;">A highly motivated Marine Biologist with a passion for scientific exploration and a commitment to advancing the field of Marine Biology.</h5>
+        </section>
+        <section class="card">
+          <h3>Skills</h3>
+          <p>Communication</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 80%;"></div>
+          </div>
+          <p>Problem Solving</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 70%;"></div>
+          </div>
+          <p>Leadership</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 90%;"></div>
+          </div>
+          <p>Innovation</p>
+          <div class="progress-bar">
+            <div class="progress" style="width: 70%;"></div>
+          </div>
+        </section>
+        <section class="skill-card">
+          <h3>Contacts</h3>
+          <p><b>Email</b> jill.anderson@example.com</p>
+          <p><b>Phone</b> +1 (123) 456-7890</p>
+          <p><b>Office Address</b> 123 Main Street, Suite 400, New York.</p>
+          <p><b>Linkedin</b> linkedin.com/in/iftahderson</p>
+          <p><b>Twitter</b> Clanderson</p>
+        </section>
+      </div>
+    </div>
+    <div class="right-column">
+      <div class="row">
+        <div class="card">
+          <h3>Experience</h3>
+          <p><b>Senior Marine Engineer</b> XYZ Company, Anytown, USA (2022 - 2025)</p>
+          <ul>
+            <li>Responsible for overseeing and managing all engineering operations related to the company’s fleet of vessels.</li>
+            <li>Developed and implemented preventive maintenance programs for vessels and equipment.</li>
+          </ul>
+          <p><b>Assistant Engineer</b> Starfleet, San Francisco, USA (2018 - 2021)</p>
+          <ul>
+            <li>Assisted in the maintenance and repair of the ship's systems.</li>
+            <li>Participated in various exploration and research missions.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Goals</h3>
+          <ul>
+            <li><b>Work on Advanced Marine Propulsion Systems –</b> Contribute to the development of green shipping technologies, such as LNG, hydrogen fuel cells, or hybrid-electric propulsion.</li>
+            <li><b>Gain International Experience –</b> Work in different countries, shipyards, or on diverse types of vessels (cargo ships, oil tankers, cruise ships, etc.).</li>
+            <li><b>Educate Future Marine Engineers –</b> Teach or mentor young engineers in maritime universities or training institutes.</li>
+            <li><b>Travel and Explore the World –</b> Utilize the marine profession to visit different countries and experience global cultures.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Volunteering Activities</h3>
+          <p><b>Life Below Water</b></p><img src="images/oceanclean.jpg" alt="ocean cleaning project" width="150px" style="float: right; margin-right: 40px;">
+          <ul>
+            <li>Join organizations like The Ocean Cleanup or local coastal cleanup events.</li>
+            <li>Work with marine biologists to help restore coral reefs and marine ecosystems.</li>
+          </ul>
+          <p><b>Clean Water and Sanitation</b></p>
+          <ul>
+            <li>Help in Water Desalination & Filtration Projects.</li>
+            <li>Support River & Harbor Cleanup Initiatives.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Availability</h3>
+          <h4 style="text-align: center; font-size: 24px;">March 2025</h4>
+          <table style="width: 100%; border: 1px solid #ddd; border-collapse: collapse; text-align: center;">
+            <thead>
+              <tr>
+                <th>Sun</th>
+                <th>Mon</th>
+                <th>Tue</th>
+                <th>Wed</th>
+                <th>Thu</th>
+                <th>Fri</th>
+                <th>Sat</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="available"></td>
+                <td class="available"></td>
+                <td class="available"></td>
+                <td class="available"></td>
+                <td class="available"></td>
+                <td class="available"></td>
+                <td class="available">1</td>
+              </tr>
+              <tr>
+                <td class="available">2</td>
+                <td class="available">3</td>
+                <td class="available">4</td>
+                <td class="available highlight">5</td>
+                <td class="available">6</td>
+                <td class="available">7</td>
+                <td class="available">8</td>
+              </tr>
+              <tr>
+                <td class="available">9</td>
+                <td class="available highlight">10</td>
+                <td class="available">11</td>
+                <td class="available highlight">12</td>
+                <td class="available">13</td>
+                <td class="available">14</td>
+                <td class="available">15</td>
+              </tr>
+              <tr>
+                <td class="available highlight">16</td>
+                <td class="available highlight">17</td>
+                <td class="available highlight">18</td>
+                <td class="available">19</td>
+                <td class="available highlight">20</td>
+                <td class="available">21</td>
+                <td class="available highlight">22</td>
+              </tr>
+              <tr>
+                <td class="available">23</td>
+                <td class="available">24</td>
+                <td class="available highlight">25</td>
+                <td class="available">26</td>
+                <td class="available">27</td>
+                <td class="available highlight">28</td>
+                <td class="available highlight">29</td>
+              </tr>
+              <tr>
+                <td class="available">30</td>
+                <td class="available highlight">31</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="card" style="background: #6a1b9a; color: white;">
+          <h3>UN Goals I Support</h3>
+          <div class="un-goals"><img src="images/4.png" alt="UN goal 4" width="100px"> <img src="images/6.png" alt="UN goal 6" width="100px"> <img src="images/7.jpg" alt="UN goal 7" width="100px"> <img src="images/14.webp" alt="UN goal 14" width="100px"> <img src="images/15.png" alt="UN goal 15" width="100px"></div>
+        </div>
+        <div class="card">
+          <h3>Contact Me</h3>
+          <form>
+            <input type="text" placeholder="Name" required=""> <input type="email" placeholder="Email" required=""> 
+            <textarea placeholder="Message" required=""></textarea> <button type="submit">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer>
+    <div class="footer-container">
+      <div class="footer-left">
+        <img src="images/logo2.png" alt="Logo" class="footer-logo">
+        <p>Blue Horizon promotes ocean conservation and sustainability through education, advocacy, and community engagement.</p>
+      </div>
+      <div class="footer-center">
+        <h3>Links</h3>
+        <ul>
+          <li>
+            <a href="home.html">Home</a>
+          </li>
+          <li>
+            <a href="table.html">Table</a>
+          </li>
+          <li>
+            <a href="team.html">Team</a>
+          </li>
+          <li>
+            <a href="profile.html">User Profile</a>
+          </li>
+          <li>
+            <a href="sitemap.html">Sitemap</a>
+          </li>
+          <li>
+            <a href="cw.html">Feedback</a>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        <h3>Editors</h3>
+        <ul>
+          <li>Student 1</li>
+          <li>Student 2</li>
+          <li>Student 3</li>
+          <li>
+            <a href="pageEditor%20_ST4.html">Student 4</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <hr>
+      <p>© 2025 Blue Horizon. All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

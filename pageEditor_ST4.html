@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor - Student 4</title>
+    <style>
+        /* General Styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image:url(images/blue.jpeg);
+            color: #333;
+        }
+
+        /* Header Section */
+        header {
+            background: #0044cc;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        /* Main Wrapper (New Container) */
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        /* Main Content Container */
+        .container {
+            width: 80%;
+            max-width: 1200px;
+            padding: 20px;
+            border-radius: 10px;
+            background: #fff;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        /* Section Styling */
+        section {
+            margin-bottom: 10px;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        /* Links */
+        a {
+            color: #0044cc;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* List Styling */
+        ul {
+            padding-left: 20px;
+        }
+
+         /* Logo Styles */
+         .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 120px;
+            width: 120px;
+            z-index: 2;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .navbar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 580px;
+            width: 120%;
+            height: 120%;
+            background-color: rgba(10, 5, 99, 0.4); /* Semi-transparent blue */
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            z-index: -1;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            padding: 10px 30px;
+            margin: 0 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: rgb(54, 60, 62);
+            color: rgb(89, 237, 232);
+        }
+
+        .separator {
+            width: 3px;
+            background-color: rgb(255, 255, 255);
+            height: 30px;
+            margin: 0 10px;
+        }
+        /* Footer Styles */
+        footer {
+            background: url('images/footer.png') no-repeat center -600px;
+            background-size: cover; /* Ensures the image covers the footer */
+            padding: 20px 0;
+            color: black;
+            font-size: 16px;
+            width: 120%;
+            margin-left: -8%;
+            margin-right: -7%;
+
+        }
+
+        /* Flexbox for Footer Layout */
+        .footer-container {
+            display: flex;
+            justify-content: space-between; /* Space out sections evenly */
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Footer Logo & Text */
+        .footer-left {
+            max-width: 300px;
+            text-align: left;
+            margin-top: 50px;
+        }
+
+        .footer-logo {
+            height: 100px;
+            width: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Footer Links */
+        .footer-center {
+            margin-right: 70px; /* Add spacing between sections */
+            margin-top: 40px;
+        }
+
+        /* Footer Editors */
+        .footer-right {
+            margin-top: 90px; /* Adjust as needed */
+        }
+
+        .footer-center h3, .footer-right h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-center ul, .footer-right ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-center ul li, .footer-right ul li {
+            margin: 5px 0;
+        }
+
+        .footer-center ul li a {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .footer-center ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Bottom Section */
+        .footer-bottom {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .footer-bottom hr {
+            width: 80%;
+            border: 0.5px solid black;
+            margin: 10px auto;
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo -->
+    <img src="images/logo2.png" alt="Logo" class="logo">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+          <a href="home.html">Home</a>
+          <div class="separator"></div>
+          <a href="#volunteer">Volunteer</a>
+          <div class="separator"></div>
+          <a href="#team">Team</a>
+          <div class="separator"></div>
+          <a href="#table">Table</a>
+          <div class="separator"></div>
+          <a href="user profile.html">User Profile</a>
+    </nav>
+
+    
+
+    <!-- New Wrapper Container for better structure -->
+    <div class="wrapper">
+      
+        <div class="container">
+          <header>
+        <h1>Page Editor - Student 4</h1>
+          </header>
+            <section>
+                <h2>Content Overview</h2>
+                <p><strong>Name:</strong> Tharusha Damsara Hewapathirana</p>
+                <p><strong>Role:</strong> Student 4</p>
+                <p><strong>Tasks:</strong> User profile, Site map, and Content Page</p>
+            </section>
+
+            <section>
+                <h2>User Profile</h2>
+                <p><B>HTML Techniques</B><br>The code begins with the DOCTYPE html declaration, which specifies that the document follows the HTML5 standard.The head section contains the document's metadata,
+                     including the title,The body is divided into three main sections Header, Main Content and Footer. The navigation bar is created using the 'nav' element,
+                     which groups together the links to different sections of the page.The profile section is structured using a 'div' container that holds the user's image, name, and etc.A progress bar is used to visually represent different skill level.
+                     The outer div acts as a container, while the inner div fills up dynamically based on the skill percentage. The experience and goals are presented in an unordered list to ensure better readability.
+                    In Availability Calendar a table is used to display availability dates, with special classes assigned to highlight selected days.
+                     The footer contains the logo and relevant links.
+                     </p>
+                
+                     
+                     <P><B>CSS Styling Techniques </B><br>
+                     The background color creates a professional appearance, while that the footer stays at the bottom of the page.
+                     In navigation links are neatly aligned to the right, improving usability.The border-radius (50%) makes the image circular, and margin: 0 auto; centers it, creating a clean and balanced layout.
+                     The progress bar technique is used to visually represent skill levels. The inner div dynamically adjusts its width to reflect the level of expertise.
+                    The hover effect (transform: scale(1.1);) adds an interactive touch by making dates stand out when hovered over.For Footer background: url Style background image is used to match the branding, and the width is set to 120% for a full-page effect.
+
+                </p>
+              
+                <p><a href="profile.html" target="_blank">User Profile Page</a></p>
+            </section>
+
+            <section>
+                <h2>Sitemap</h2>
+                <p><B>HTML Techniques</B><br>
+                    The code begins with the DOCTYPE html declaration, which specifies that the document follows the HTML5 standard.The head section contains the document's metadata,
+                     including the title,The body is divided into three main sections Header, Main Content and Footer. The navigation bar is created using the 'nav' element,
+                     which groups together the links to different sections of the page.
+                    "svg" defines a scalable vector graphic, making the sitemap responsive."node"creates clickable buttons representing site sections.
+                    "line" elements visually connect different pages, with marker-end added the arrowheads.
+                    text elements provide labels for the nodes, ensuring clarity.
+                    "href" elements to make them clickable link to web pages."footer" organizes site information, links, and credits.
+                    It includes a logo, site links, and a list of editors.</p>
+                    <p><B>CSS Styling Techniques </B><br>
+                    In CSS styling body {display: flex; flex-direction: column;} Ensures the page stretches to at least the full viewport height.
+                    background-image Sets a background image for visual "appeal.navbar" aligns the menu items to the right.
+                     In SVG Styling node "fill; stroke" Defines rounded rectangles with a blue fill.
+                    "node:hover"Adds hover effects with a brighter blue and shadow, improving usability.For Footer "background: url" background image is used to match the branding.
+                    "footer-container"Creates a responsive layout for footer sections.</p>
+                    
+                <p><a href="sitemap.html" target="_blank">Sitemap Page</a></p>
+            </section>
+
+            <section>
+                <h2>Content Page</h2>
+                <p><B>HTML Techniques</B><br>
+                    The code begins with the DOCTYPE html declaration, which specifies that the document follows the HTML5 standard.The head section contains the document's metadata,
+                     including the title,The body is divided into three main sections Header, Main Content and Footer.Anchor tags "a href #sections" are used for internal navigation within the page,
+                      allowing users to quickly jump to different sections like "Introduction," "The targets," "Why marine protection is Important," and "Take Actions.
+                     img tags are used for images such as logos and background images. The alt attribute ensures that if the image cannot be loaded, a description is displayed insteadFor Footer  " background: url" background image is used to match the branding.
+                     "footer-container"Creates a responsive layout for footer sections..</p>
+                     <p><B>CSS Styling Techniques </B><br>The use of position fixed on both the navbar and sidebar-menu makes these elements stay in place when the user scrolls down the page.
+                         This technique helps keep navigation visible at all times.Flexbox is used in the .navbar and .footer-container to arrange items horizontally and maintain a flexible, responsive layout.
+                <p><a href="content_ST4.html" target="_blank">Content Page</a></p>
+            </section>
+
+            <section>
+                <h2>Challenges and Lessons Learned</h2>
+                <ul>
+                    <li><B>Creating an interactive SVG-based sitemap with clickable nodes and hover effects was difficult.<Br>
+                        Lessons Learned</B> Required manual positioning of "rect", "line", and "text" elements and fine-tuning x, y coordinates.</li>
+                    <li><B> Coordinating Work Among Team Members and Distributing tasks fairly<Br>
+                        Lessons Learned</B>  keep a shared folder to ensure everyone follows the same file structure .
+                        </li>
+                    <li><B> Mismatch Between Figures and Instructions in Coursework.<Br>
+                        Lessons Learned</B> Maintain design consistency across all pages, even if figures suggest different styles</li>
+                    <li><B>Unclear Instructions in the Coursework.<Br>
+                        Lessons Learned:</B> Always clarify unclear instructions with the instructor early.</li>
+                </ul>    
+            </section>
+
+            <section>
+                <h2>Accessibility</h2>
+                <p>Accessibility was prioritized by using semantic HTML elements and ARIA attributes. From the user profile users can personalize their information and they can mark available dates for meetings or events.
+                    Alse Sitemap has interactive nodes that represent each page or section of your website and Let users add custom labels or notes to specific sections of the sitemap, particularly useful for internal collaboration or understanding.
+                     Users can click on them to view more information or go directly to that sectionThe pages are also responsive, ensuring a good user experience on different devices.</p>
+            </section>
+
+            <section>
+                <h2>Compliance</h2>
+                <p>The website has been developed with various compliance features that align with Janet regulations, ensuring it meets accessibility, data protection, security, and content quality standards. Accessibility is achieved through the use of semantic HTML elements such as headeer, footer, and nav, along with descriptive alt text for images, making it easier for screen readers to navigate.
+                     Keyboard navigation is supported, and the site follows color contrast guidelines for users with low vision</p>
+            </section>
+
+            <section>
+                <h2>References</h2>
+                <p>W3Schools.com. (n.d.). https://www.w3schools.com/css/default.asp</p>
+                <p>W3Schools.com. (n.d.-b). https://www.w3schools.com/html/default.asp</p>
+                <p>Unsplash. (n.d.). Beautiful free Images & Pictures | Unsplash. Unsplash. https://unsplash.com/</p>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Left Section: Icon & Flavor Text -->
+            <div class="footer-left">
+                <img src="images/logo2.png" alt="Logo" class="footer-logo">
+                <p>Blue Horizon promotes ocean conservation and sustainability through education, advocacy, and community engagement.</p>
+            </div>
+
+            <!-- Center Section: Links -->
+            <div class="footer-center">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="table.html">Table</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">User Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="cw.html">Feedback</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Section: Editors -->
+            <div class="footer-right">
+                <h3>Editors</h3>
+                <ul>
+                    <li>Student 1</li>
+                    <li>Student 2</li>
+                    <li>Student 3</li>
+                    <li><a href="pageEditor _ST4.html">Student 4</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Notice -->
+        <div class="footer-bottom">
+            <hr>
+            <p>&copy; 2025 Blue Horizon. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

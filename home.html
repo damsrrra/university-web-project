@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blue Horizon</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Video background */
+        video.background-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        /* Logo */
+        .logo {
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            height: 120px;
+            width: 125px;
+            z-index: 2;
+        }
+
+        /* Navbar styles */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 10px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Semi-transparent navbar background */
+        .navbar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 780px;
+            width: 80%;
+            height: 90%;
+            background-color: rgba(10, 5, 99, 0.4);
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            z-index: -1;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            padding: 10px 30px;
+            margin: 0 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: rgb(54, 60, 62);
+            color: rgb(15, 216, 216);
+        }
+
+        .separator {
+            width: 3px;
+            background-color: rgb(255, 255, 255);
+            height: 30px;
+            margin: 0 10px;
+        }
+
+        /* Large bottom-left text box */
+        .text-box {
+            position: absolute;
+            bottom: 300px;
+            left: 50px;
+            width: 40%;
+            height: auto;
+            color: white;
+            z-index: 1;
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: flex-start;
+            padding: 20px;
+        }
+
+        .text-box h1 {
+            font-size: 34px;
+            margin-bottom: 0px;
+        }
+
+        .text-box p {
+            font-size: 18px;
+            opacity: 0.9;
+        }
+
+        /* Footer Styles */
+        footer {
+            background: url('images/footer.png') no-repeat center -593px;
+            background-size: cover; /* Ensures the image covers the footer */
+            padding: 20px 0;
+            color: black;
+            font-size: 16px;
+            width: 100%;
+            position: absolute;
+            bottom: 0;
+            z-index: 0;
+        }
+
+        /* Flexbox for Footer Layout */
+        .footer-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Footer Logo & Text */
+        .footer-left {
+            max-width: 300px;
+            text-align: left;
+            margin-top: 30px;
+        }
+
+        .footer-logo {
+            height: 100px;
+            width: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Footer Links */
+        .footer-center {
+            margin-right: 70px;
+            margin-top: 40px;
+        }
+
+        /* Footer Editors */
+        .footer-right {
+            margin-top: 60px;
+        }
+
+        .footer-center h3, .footer-right h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-center ul, .footer-right ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-center ul li, .footer-right ul li {
+            margin: 5px 0;
+        }
+
+        .footer-center ul li a {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .footer-center ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Bottom Section */
+        .footer-bottom {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .footer-bottom hr {
+            width: 80%;
+            border: 0.5px solid black;
+            margin: 10px auto;
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Video Background -->
+    <video class="background-video" autoplay muted loop>
+        <source src="images/bgvideo.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <!-- Logo -->
+    <img src="images/logo2.png" alt="Logo" class="logo">
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <a href="home.html">Home</a>
+        <div class="separator"></div>
+        <a href="volunteer.html">Volunteer</a>
+        <div class="separator"></div>
+        <a href="team.html">Team</a>
+        <div class="separator"></div>
+        <a href="table.html">Table</a>
+        <div class="separator"></div>
+        <a href="profile.html">User Profile</a>
+    </nav>
+
+    <!-- Large Bottom-Left Text Box -->
+    <div class="text-box">
+        <h1>BLUE</h1>
+        <h1>HORIZON</h1>
+        <p>At Blue Horizon, our mission is to protect and restore the health of our oceans through innovative solutions, community engagement, and sustainable practices. We believe that thriving oceans are the foundation of a thriving future for all. By fostering awareness, driving action, and collaborating with global partners, we strive to create a world where marine ecosystems flourish, biodiversity is preserved, and future generations can enjoy the beauty and bounty of our blue planet.</p>
+        <!-- Link to Coral Reef Conservation Page -->
+        <a href="content_ST2.html" style="background-color: #0288D1; color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; display: inline-block; margin-top: 10px;">Learn More</a>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <!-- Left Section: Icon & Flavor Text -->
+            <div class="footer-left">
+                <img src="images/logo2.png" alt="Logo" class="footer-logo">
+                <p>Blue Horizon promotes ocean conservation and sustainability through education, advocacy, and community engagement.</p>
+            </div>
+
+            <!-- Center Section: Links -->
+            <div class="footer-center">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="table.html">Table</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">User Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Section: Editors -->
+            <div class="footer-right">
+                <h3>Editors</h3>
+                <ul>
+                    <li>Student 1</li>
+                    <li><a href="pageEditor_ST2/pageEditor_ST2.html">Student 2</a></li>
+                    <li>Student 3</li>
+                    <li>Student 4</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Notice -->
+        <div class="footer-bottom">
+            <hr>
+            <p>&copy; 2025 Blue Horizon. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+</body>
+</html>

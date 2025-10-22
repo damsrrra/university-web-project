@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Volunteer - Life Below Water</title>       
+
+<style>
+
+ 
+	/* Content Section */
+		main {
+   		 padding: 0;
+    		text-align: center;
+	}
+
+
+	
+	/*  Volunteer Cards */
+	.volunteer-list {
+    		display: flex;
+    		justify-content: center;
+    		gap: 30px;
+    		flex-wrap: wrap;
+	}
+
+	.volunteer-card {
+    		background: white;
+		margin-right: 90px;      /* Increase the distance between 2 cards */
+    		padding:0;
+    		border-radius: 10px;
+    		box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.1);
+    		text-align: center;
+    		transition: transform 0.3s;
+		position: relative;
+		width:500px;
+		height:20%	}
+
+	.details {
+      		background-color: #f8f9fa;
+      		padding: 20px;
+      		border-radius: 8px;
+      		margin-bottom: 30px;
+		margin-top: 30px;
+    	}
+
+	.button {
+      		display: flex;
+      		width: auto;
+      		padding: 14px;
+      		background-color: #0B4A7A;
+      		color: white;
+      		border: none;
+      		border-radius: 8px;
+      		font-size: 15px;
+      		font-weight: 70px;
+      		transition: background-color 0.3s ease;
+      		justify-content: center;
+      		text-decoration: none;
+   	 }
+
+	.button:hover {
+		background-color:#85c1e9 
+
+	}
+
+	.volunteer-card:hover {
+    		transform: scale(1.05);
+	}
+
+	.volunteer-card img {
+    		width: 100%;
+		height: 300px;
+    		border-radius: 10px;
+	}
+
+
+
+	/*  Reviews Section */
+	h3{
+	color:gold;
+	font-size:25px;
+	padding:0;
+	}
+
+	.reviews-title {
+      		text-align:left;
+		font-size:35px;
+		margin-top:100px;
+		margin-left:15%;
+      		color: #333;
+      		font-weight: 700;
+      		position: relative;
+		margin-bottom:5px;
+		color:#004170;
+    	}
+
+	.reviews-container {
+		display:flex;  /*To keep all 3 reviews in line*/
+      		align-items: center; /* Centers the heading */
+      		width: 100%;
+      		padding: 0px;
+		margin-right:40px;
+		margin-top:0;
+
+    	}
+
+	
+	.review {
+  		background: white;
+  		padding: 5px;
+  		border-radius: 20px;
+  		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		margin-right:20px;
+		text-align:left;
+		font-size:15px;
+		color:#004170;
+	}
+
+	
+	.rating-summary {
+      		text-align: center;
+      		background: white;
+  		padding: 30px;
+  		border-radius: 20px;
+  		box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+		margin-right:10px;
+		width: 50%;
+    	}
+
+	
+
+	.rating-number {
+      		font-size: 50px;
+      		font-weight: 700;
+      		color: #4a90e2;
+    	}
+    
+    	.rating-label {
+      		font-size: 24px;
+      		font-weight: 600;
+      		color: #333;
+      		margin-left: 10px;
+    	}
+
+
+	/* Feedback Form */
+	.feedback-container {
+      		width: 70%;
+      		margin: 40px auto;
+      		padding: 30px;
+      }
+
+    	.feedback-form textarea {
+     		width: 100%;
+		height: 200px;
+      		padding: 10px;
+      		border: 1px ;
+      		border-radius: 20px;
+      		margin-bottom: 5%;
+         }
+    
+    	.button-group {
+      		display: flex;
+      		justify-content: center;
+      		gap: 15px;
+    	}
+    
+    	.submit-btn {
+      		background-color: #0B4A7A;
+      		color: white;
+      		border: none;
+      		padding: 12px 30px;
+      		border-radius: 8px;
+      		font-weight: 600;
+      		cursor: pointer;
+      		transition: background-color 0.3s ease;
+    	}
+    
+    	.submit-btn:hover {
+      		background-color: #0c5d9c;
+    	}
+    
+    	.cancel-btn {
+     		 background-color: #e2e2e2;
+     		 color: #333;
+     		 border: none;
+      		padding: 12px 30px;
+      		border-radius: 8px;
+      		font-weight: 600;
+      		cursor: pointer;
+      		transition: background-color 0.3s ease;
+    	}
+    
+    	.cancel-btn:hover {
+      		background-color: #d0d0d0;
+    	}
+
+	.feedback-title{
+		margin-top: 5%;
+		color:#2c3968;
+		font-size:30px;
+
+	}
+
+	
+</style>
+</head>
+<body style="background-color:#ADD8E6;">
+
+
+    <!-- Header -->
+    <!-- Logo -->
+        <img src="images/logo2.png" alt="Logo" class="logo">
+
+        <!-- Navbar -->
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <div class="separator"></div>
+            <a href="volunteer.html">Volunteer</a>
+            <div class="separator"></div>
+            <a href="#team">Team</a>
+            <div class="separator"></div>
+            <a href="#table">Table</a>
+        </nav>
+
+
+    <main>
+
+	<br>
+        <h1 style="color:#004170;"><b>UPCOMING EVENTS</b></h1><br><br>
+
+	
+	<div style="float:right; margin-right: 10px;">
+        	<!-- Sorting Dropdown -->
+        	<label for="sort" ></label>
+        	<select id="sort">
+            		<option value="popular" >MOST POPULAR</option>
+            		<option value="recent" selected>NEWEST</option>
+			<option value="recent">OLDEST</option>
+        	</select>
+	</div>
+
+        <!-- Volunteer Cards -->
+	<br><br>
+        <section class="volunteer-list">
+
+	    <!--BEACH CLEANUP-->
+            <div class="volunteer-card">
+                <img src="images/beach-clean-up.jpg" alt="Beach Cleanup" >
+                <h2>Beach Cleanup</h2><br>
+                <p><i>Protect Our Oceans, One Beach at a Time</i></p> 
+		
+		<div class="details" style="text-align: left;">
+        		<div class="detail-item">
+          			
+          			<p class="detail-text"><strong>📅 When:</strong> Saturday, March 15, 2025 | 9:00 AM - 12:00 PM</p>
+        		</div>
+        	<div class="detail-item">
+          		
+          		<p class="detail-text" ><strong>📌 Where:</strong> Brown's Beach Negombo, Main Entrance<br>
+        	</div>
+        	
+      	   </div>
+
+
+		<!--BUTTON-->
+                <a href="apply.html" class="button">APPLY NOW</a></p>
+            </div>
+
+		<!--CORAL RESTORATION-->            
+		<div class="volunteer-card">
+                <img src="images/Coral.jpg" alt="Coral Restoration" >
+                <h2>Coral Reef Restoration</h2><br>
+                <p><i>Help plant and restore coral reefs to save marine life</i></p>
+
+		<div class="details" style="text-align: left;">
+        		<div class="detail-item">
+          			
+          			<p class="detail-text"><strong>📅 When:</strong> Thursday, March 20, 2025 | 9:00 AM - 12:00 PM</p>
+        		</div>
+        	<div class="detail-item">
+          		
+          		<p class="detail-text" ><strong>📌 Where:</strong> Marine Beach Colombo, Main Entrance<br>
+                </div>
+        	
+	   </div>
+                <!--BUTTON-->
+                <a href="apply.html" class="button">APPLY NOW</a></p>
+           </div>
+
+
+
+	  <!--Marine Wildlife Protection-->
+
+	  <div class="volunteer-card">
+                <img src="images/turtle.jpg" alt="Marine Wildlife Protection" >
+                <h2>Marine Wildlife Protection</h2><br>
+                <p><i>Help monitor and protect endangered sea turtle nesting sites along our coastline.</i></p><br>
+
+		<div class="details" style="text-align: left;">
+        		<div class="detail-item">
+          			
+          			<p class="detail-text"><strong>📅 When:</strong> Thursday, March 22, 2025 | 9:00 AM - 12:00 PM</p>
+        		</div>
+        	<div class="detail-item">
+          		
+          		<p class="detail-text" ><strong>📌 Where:</strong> Ahungalla Beach , Main Entrance<br>
+                </div>
+        	
+	 </div>
+                <!--BUTTON-->
+                <a href="apply.html" class="button">APPLY NOW</a></p>
+           </div>
+
+
+	  <!--Marine Rescue Diving Teamn-->
+
+	  <div class="volunteer-card">
+                <img src="images/divers.jpg" alt="Marine Rescue Diving Team" >
+                <h2>Marine Rescue Diving Team</h2><br>
+                <p><i>Dive to locate and free marine animals entangled in fishing nets, plastic debris, and other human-made hazards.</i></p><br>
+
+		<div class="details" style="text-align: left;">
+        		<div class="detail-item">
+          			
+          			<p class="detail-text"><strong>📅 When:</strong> Saturday, March 29, 2025 | 9:00 AM - 12:00 PM</p>
+        		</div>
+        	<div class="detail-item">
+          		
+          		<p class="detail-text" ><strong>📌 Where:</strong> Galle Beach , Main Entrance<br>
+                </div>
+        	
+	 </div>
+                <!--BUTTON-->
+                <a href="apply.html" class="button">APPLY NOW</a></p>
+           </div>
+
+
+
+        </section>
+
+        <!-- Reviews Section -->
+
+	<br>
+	<h2 class="reviews-title">REVIEWS</h2>
+        <div class="reviews-container">
+    		
+    		
+    		<div class="rating-summary">
+      			<span class="rating-number">9.4</span>
+      			<span class="rating-label">/ 10 Exceptional</span><br>
+      			<p style="color:black;">Based on 245 volunteer reviews<p>
+			<h3>★★★★★</h3>
+    		</div>
+    
+  
+   
+  	<div class="review">
+    		<h3>★★★★★</h3>
+    		<strong>Amazing experience!</strong><br>
+    		<p style="color:grey;">I felt like I made a difference working with this project...
+		<a href="#" style="color:#77aaff;">See More</a></p>
+
+		<hr>
+    		<p>Sarah Johnson | March 5, 2025</p>
+  		</div>
+  
+  	<div class="review">
+    		<h3>★★★★★</h3>
+    		<strong>Life-changing volunteer work</strong><br>
+    		<p style="color:grey;">This was my first time volunteering abroad and I couldn't have asked for...
+		<a href="#" style="color:#77aaff;">See More</a></p>
+		<hr>
+    		<p>Michael Torres | February 28, 2025</p>
+  	</div>
+   </div>
+  
+	<!--FEEDBACK-->
+
+	
+	<h2 class="feedback-title"><b>Share your Feedback</b></h2>
+	<p style="color:white; font-size: 30px;">★★★★★</p>
+
+	<div class="feedback-container">
+
+	        <form class="feedback-form">
+      			<textarea placeholder="Write your review here... Tell us about your volunteer experience."></textarea>
+      
+      			<div class="button-group">
+        			<button type="submit" class="submit-btn">Submit</button>
+        			<button type="button" class="cancel-btn">Cancel</button>
+			</div>
+		</form>
+	</div>
+
+    </main>
+
+	<footer>
+        <div class="footer-container">
+            <!-- Left Section: Icon & Flavor Text -->
+            <div class="footer-left">
+                <img src="images/logo2.png" alt="Logo" class="footer-logo">
+                <p>Blue Horizon promotes ocean conservation and sustainability through education, advocacy, and community engagement.</p>
+            </div>
+
+            <!-- Center Section: Links -->
+            <div class="footer-center">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="table.html">Table</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">User Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="cw.html">Feedback</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Section: Editors -->
+            <div class="footer-right">
+                <h3>Editors</h3>
+                <ul>
+                    <li><a href="pageEditor_ST1.html">Student 1</a></li>
+                    <li>Student 2</li>
+                    <li>Student 3</li>
+                    <li>Student 4</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Notice -->
+        <div class="footer-bottom">
+            <hr>
+            <p>&copy; 2025 Blue Horizon. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+    
+
+    </body>
+</html>

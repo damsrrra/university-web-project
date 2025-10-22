@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitemap</title>
+    <style>
+       
+        body {
+            font-family: Arial, sans-serif;
+            background-image:url(images/sea.jpg);
+            margin-left: 100px;
+            margin-right: 100px;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes at least the full viewport height */
+        }
+      
+        .sitemap {
+      margin: 40px 0;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .sitemap h2 {
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #2C3E50;
+    }
+
+   
+    .sitemap-node {
+      fill: #1a70bc; 
+      stroke: #1a70bc; 
+      stroke-width: 2;
+      transition: fill 0.3s ease, stroke 0.3s ease;
+    }
+
+    .sitemap-node:hover,
+    .sitemap-node:focus {
+      fill: #1a70bc; 
+      stroke: #1a70bc;
+      outline: none; 
+    }
+
+   
+    text {
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      pointer-events: none; 
+    }
+
+   
+    .main-label {
+      font-size: 14px;
+      fill: white;
+    }
+
+  
+    .alt-text {
+      font-size: 10px;
+      fill: #f0f0f0;
+    }
+
+   
+    .sitemap-line {
+      stroke: #1ABC9C;
+      stroke-width: 2;
+    }
+
+   
+    @media (max-width: 768px) {
+      .sitemap svg {
+        width: 100%;
+        height: auto;
+      }
+    }
+    /* Logo Styles */
+    .logo {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            height: 120px;
+            width: 120px;
+            z-index: 2;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: flex-end;
+            padding: 1px 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .navbar::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            margin-left: 580px;
+            width: 120%;
+            height: 120%;
+            background-color: rgba(10, 5, 99, 0.4); /* Semi-transparent blue */
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+            z-index: -1;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+            padding: 10px 30px;
+            margin: 0 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .navbar a:hover {
+            background-color: rgb(54, 60, 62);
+            color: rgb(79, 129, 217);
+        }
+
+        .separator {
+            width: 3px;
+            background-color: rgb(255, 255, 255);
+            height: 30px;
+            margin: 0 10px;
+        }
+        /* Footer Styles */
+        footer {
+            background: url('images/footer.png') no-repeat center -600px;
+            background-size: cover; /* Ensures the image covers the footer */
+            padding: 20px 0;
+            color: black;
+            font-size: 16px;
+            width: 120%;
+            margin-left: -8%;
+            margin-right: -7%;
+
+        }
+
+        /* Flexbox for Footer Layout */
+        .footer-container {
+            display: flex;
+            justify-content: space-between; /* Space out sections evenly */
+            align-items: flex-start;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Footer Logo & Text */
+        .footer-left {
+            max-width: 300px;
+            text-align: left;
+            margin-top: 50px;
+        }
+
+        .footer-logo {
+            height: 100px;
+            width: auto;
+            margin-bottom: 10px;
+        }
+
+        /* Footer Links */
+        .footer-center {
+            margin-right: 70px; /* Add spacing between sections */
+            margin-top: 40px;
+        }
+
+        /* Footer Editors */
+        .footer-right {
+            margin-top: 90px; /* Adjust as needed */
+        }
+
+        .footer-center h3, .footer-right h3 {
+            margin-bottom: 10px;
+        }
+
+        .footer-center ul, .footer-right ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .footer-center ul li, .footer-right ul li {
+            margin: 5px 0;
+        }
+
+        .footer-center ul li a {
+            color: black;
+            text-decoration: underline;
+        }
+
+        .footer-center ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer Bottom Section */
+        .footer-bottom {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        .footer-bottom hr {
+            width: 80%;
+            border: 0.5px solid black;
+            margin: 10px auto;
+        }
+
+        .footer-bottom p {
+            font-size: 12px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Logo -->
+    <img src="images/logo2.png" alt="Logo" class="logo">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+          <a href="home.html">Home</a>
+          <div class="separator"></div>
+          <a href="#volunteer">Volunteer</a>
+          <div class="separator"></div>
+          <a href="#team">Team</a>
+          <div class="separator"></div>
+          <a href="#table">Table</a>
+          <div class="separator"></div>
+          <a href="user profile.html">User Profile</a>
+    </nav>
+
+ 
+  <div class="container">
+    <section class="sitemap">
+      <h2>Site Map</h2>
+      <svg
+        id="sitemap-svg"
+        viewBox="0 0 1200 800"
+        xmlns="http://www.w3.org/2000/svg"
+        aria-labelledby="sitemap-title"
+      >
+        <title id="sitemap-title">Website Sitemap</title>
+
+     
+        <line x1="200" y1="75" x2="250" y2="75" class="sitemap-line" />
+       
+        <line x1="350" y1="75" x2="450" y2="75" class="sitemap-line" />
+        <line x1="350" y1="75" x2="650" y2="75" class="sitemap-line" />
+        <line x1="350" y1="75" x2="850" y2="75" class="sitemap-line" />
+        <line x1="350" y1="75" x2="1050" y2="75" class="sitemap-line" />
+       
+        <line x1="300" y1="100" x2="300" y2="150" class="sitemap-line" />
+       
+        <line x1="125" y1="150" x2="250" y2="75" class="sitemap-line" />
+       
+        <line x1="350" y1="75" x2="525" y2="150" class="sitemap-line" />
+     
+        <line x1="350" y1="75" x2="725" y2="150" class="sitemap-line" />
+      
+        <line x1="350" y1="75" x2="900" y2="150" class="sitemap-line" />
+       
+        <line x1="300" y1="100" x2="125" y2="250" class="sitemap-line" />
+        <line x1="300" y1="100" x2="325" y2="250" class="sitemap-line" />
+        <line x1="300" y1="100" x2="525" y2="250" class="sitemap-line" />
+        <line x1="300" y1="100" x2="725" y2="250" class="sitemap-line" />
+      
+        <line x1="125" y1="300" x2="125" y2="350" class="sitemap-line" />
+        <line x1="325" y1="300" x2="325" y2="350" class="sitemap-line" />
+        <line x1="525" y1="300" x2="525" y2="350" class="sitemap-line" />
+        <line x1="725" y1="300" x2="725" y2="350" class="sitemap-line" />
+       
+
+      
+        <a href="splash.html">
+          <rect
+            x="50"
+            y="50"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="125" y="75" text-anchor="middle" class="main-label">Splash Screen</text>
+          <text x="125" y="90" text-anchor="middle" class="alt-text">First page users see</text>
+        </a>
+
+      
+        <a href="home.html">
+          <rect
+            x="250"
+            y="50"
+            width="100"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="300" y="75" text-anchor="middle" class="main-label">Home</text>
+          <text x="300" y="90" text-anchor="middle" class="alt-text">Main page</text>
+        </a>
+          
+        
+
+        <a href="content_ST1.html">
+          <rect
+            x="400"
+            y="50"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="475" y="75" text-anchor="middle" class="main-label">Content (ST1)</text>
+          <text x="475" y="90" text-anchor="middle" class="alt-text">Student 1's content</text>
+        </a>
+
+       
+        <a href="content_ST2.html">
+          <rect
+            x="600"
+            y="50"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="675" y="75" text-anchor="middle" class="main-label">Content (ST2)</text>
+          <text x="675" y="90" text-anchor="middle" class="alt-text">Student 2's content</text>
+        </a>
+        <a href="content_ST3.html">
+          <rect
+            x="800"
+            y="50"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="875" y="75" text-anchor="middle" class="main-label">Content (ST3)</text>
+          <text x="875" y="90" text-anchor="middle" class="alt-text">Student 3's content</text>
+        </a>
+        <a href="content_ST4.html">
+          <rect
+            x="1000"
+            y="50"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="1075" y="75" text-anchor="middle" class="main-label">Content (ST4)</text>
+          <text x="1075" y="90" text-anchor="middle" class="alt-text">Student 4's content</text>
+        </a>
+
+      
+        <a href="volunteer.html">
+          <rect
+            x="50"
+            y="150"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="125" y="175" text-anchor="middle" class="main-label">Volunteer</text>
+          <text x="125" y="190" text-anchor="middle" class="alt-text">Volunteering info</text>
+        </a>
+
+       
+        <a href="table.html">
+          <rect
+            x="250"
+            y="150"
+            width="100"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="300" y="175" text-anchor="middle" class="main-label">Table</text>
+          <text x="300" y="190" text-anchor="middle" class="alt-text">Data in tables</text>
+        </a>
+
+      
+        <a href="profile.html">
+          <rect
+            x="450"
+            y="150"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="525" y="175" text-anchor="middle" class="main-label">User Profile</text>
+          <text x="525" y="190" text-anchor="middle" class="alt-text">Personal info</text>
+        </a>
+
+     
+        <a href="feedback.html">
+          <rect
+            x="650"
+            y="150"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="725" y="175" text-anchor="middle" class="main-label">Feedback</text>
+          <text x="725" y="190" text-anchor="middle" class="alt-text">Share feedback</text>
+        </a>
+
+      
+        <a href="team.html">
+          <rect
+            x="850"
+            y="150"
+            width="100"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="900" y="175" text-anchor="middle" class="main-label">Team</text>
+          <text x="900" y="190" text-anchor="middle" class="alt-text">About the team</text>
+        </a>
+
+       
+        <a href="pageEditor_ST1.html">
+          <rect
+            x="50"
+            y="250"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="125" y="275" text-anchor="middle" class="main-label">Editor (ST1)</text>
+          <text x="125" y="290" text-anchor="middle" class="alt-text">Edit ST1's content</text>
+        </a>
+        <a href="pageEditor_ST2.html">
+          <rect
+            x="250"
+            y="250"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="325" y="275" text-anchor="middle" class="main-label">Editor (ST2)</text>
+          <text x="325" y="290" text-anchor="middle" class="alt-text">Edit ST2's content</text>
+        </a>
+        <a href="pageEditor_ST3.html">
+          <rect
+            x="450"
+            y="250"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="525" y="275" text-anchor="middle" class="main-label">Editor (ST3)</text>
+          <text x="525" y="290" text-anchor="middle" class="alt-text">Edit ST3's content</text>
+        </a>
+        <a href="pageEditor_ST4.html">
+          <rect
+            x="650"
+            y="250"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="725" y="275" text-anchor="middle" class="main-label">Editor (ST4)</text>
+          <text x="725" y="290" text-anchor="middle" class="alt-text">Edit ST4's content</text>
+        </a>
+
+       
+        <a href="validation_ST1.html">
+          <rect
+            x="50"
+            y="350"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="125" y="375" text-anchor="middle" class="main-label">Validation (ST1)</text>
+          <text x="125" y="390" text-anchor="middle" class="alt-text">Validate ST1's content</text>
+        </a>
+        <a href="validation_ST2.html">
+          <rect
+            x="250"
+            y="350"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="325" y="375" text-anchor="middle" class="main-label">Validation (ST2)</text>
+          <text x="325" y="390" text-anchor="middle" class="alt-text">Validate ST2's content</text>
+        </a>
+        <a href="validation_ST3.html">
+          <rect
+            x="450"
+            y="350"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="525" y="375" text-anchor="middle" class="main-label">Validation (ST3)</text>
+          <text x="525" y="390" text-anchor="middle" class="alt-text">Validate ST3's content</text>
+        </a>
+        <a href="validation_ST4.html">
+          <rect
+            x="650"
+            y="350"
+            width="150"
+            height="50"
+            rx="10"
+            ry="10"
+            class="sitemap-node"
+            tabindex="0"
+          />
+          <text x="725" y="375" text-anchor="middle" class="main-label">Validation (ST4)</text>
+          <text x="725" y="390" text-anchor="middle" class="alt-text">Validate ST4's content</text>
+        </a>
+      </svg>
+    </section>
+  </div>
+   <footer>
+        <div class="footer-container">
+            <!-- Left Section: Icon & Flavor Text -->
+            <div class="footer-left">
+                <img src="images/logo2.png" alt="Logo" class="footer-logo">
+                <p>Blue Horizon promotes ocean conservation and sustainability through education, advocacy, and community engagement.</p>
+            </div>
+
+            <!-- Center Section: Links -->
+            <div class="footer-center">
+                <h3>Links</h3>
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="table.html">Table</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">User Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                    <li><a href="cw.html">Feedback</a></li>
+                </ul>
+            </div>
+
+            <!-- Right Section: Editors -->
+            <div class="footer-right">
+                <h3>Editors</h3>
+                <ul>
+                    <li>Student 1</li>
+                    <li>Student 2</li>
+                    <li>Student 3</li>
+                    <li><a href="pageEditor _ST4.html">Student 4</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Copyright Notice -->
+        <div class="footer-bottom">
+            <hr>
+            <p>&copy; 2025 Blue Horizon. All Rights Reserved.</p>
+        </div>
+ </footer>    
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const goUpBtn = document.getElementById("go-up-btn");
+
+     
+      window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+          goUpBtn.style.display = "block";
+        } else {
+          goUpBtn.style.display = "none";
+        }
+      });
+
+     
+      goUpBtn.addEventListener("click", function () {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth", 
+        });
+      });
+    });
+  </script>
+</body>
+</html>
