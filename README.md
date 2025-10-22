@@ -1,2 +1,3 @@
 # University-web-project
 A website called Blue Horizon to promotes ocean conservation and sustainability through education, advocacy, and community engagement.
+This project was developed as part of a group assignment by four students. It demonstrates teamwork, problem-solving, and technical implementation in the field of web development, showcasing how collaborative development and version control can be effectively used to achieve a common goal. As Student 4 (ST4), I mainly contributed to designing the user profile section and creating the site map to enhance website navigation and user experience.
